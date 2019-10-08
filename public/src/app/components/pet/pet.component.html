@@ -1,0 +1,8 @@
+<h4>Details about {{ name }}</h4>
+<p>Type: {{type}}</p>
+<p>Description: {{description}}</p>
+<p *ngIf="skill1">Skill 1: {{skill1}}</p>
+<p *ngIf="skill2">Skill 2: {{skill2}}</p>
+<p *ngIf="skill3">Skill 3: {{skill3}}</p>
+<p>Likes: {{likes}}</p>
+<button *ngIf="!isLiked" (click)="likePet()">Like</button> <button (click)="deletePet()">Adopt this pet!</button>

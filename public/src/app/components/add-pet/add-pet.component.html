@@ -1,0 +1,46 @@
+<div>
+    <h4>Know a pet needing a home?</h4>
+    <form #valForm='ngForm' (ngSubmit)="createPet()">
+        <div>
+                Name:<input type="text" name="name" required minlength="3" #valName='ngModel' [(ngModel)]="name">
+                <div *ngIf="errors">
+                    <p *ngIf="errors.name">{{ errors.name.message }}</p>
+                </div>
+        </div>
+        <div>
+                Type:<input type="text" name="type" required minlength="3" #valType='ngModel' [(ngModel)]="type">
+                <div *ngIf="errors">
+                    <p *ngIf="errors.type">{{ errors.type.message }}</p>
+                </div>
+        </div>
+        <div>
+                Description:<input type="text" name="description" required minlength="3" #valDescription='ngModel' [(ngModel)]="description">
+                <div *ngIf="errors">
+                    <p *ngIf="errors.description">{{ errors.description.message }}</p>
+                </div>
+        </div>
+        <div>
+                Skill 1:<input type="text" name="skill1" ngModel [(ngModel)]="skill1">
+                <div *ngIf="errors">
+                    <p *ngIf="errors.skill1">{{ errors.skill1.message }}</p>
+                </div>
+        </div>
+        <div>
+                Skill 2:<input type="text" name="skill2" ngModel [(ngModel)]="skill2">
+                <div *ngIf="errors">
+                    <p *ngIf="errors.skill2">{{ errors.skill2.message }}</p>
+                </div>
+        </div>
+        <div>
+                Skill 3:<input type="text" name="skill3" ngModel [(ngModel)]="skill3">
+                <div *ngIf="errors">
+                    <p *ngIf="errors.skill3">{{ errors.skill3.message }}</p>
+                </div>
+        </div>
+
+                <button *ngIf="!valForm.valid" type="submit">Invalid</button>
+                <button *ngIf="valForm.valid" type="submit">submit</button>
+            </form>
+            <button [routerLink]="['/pets']">Cancel</button>
+
+</div>
